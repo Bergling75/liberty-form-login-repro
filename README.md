@@ -57,7 +57,7 @@ This produces `repro-ear/target/repro-ear.ear`.
 
 ## Confirmed reproduction
 
-- Verified by hand against a local Open Liberty **26.0.0.3** install: logging in as
+- Verified by hand against a local Open Liberty **26.0.0.4** install: logging in as
   `reprouser`/`reprouser` and viewing `welcome.jsp` correctly shows `reprouser` as the value
   captured by `PostLoginCaptureFilter` - no bug.
 - Verified against a local Open Liberty **26.0.0.5** install by driving the FORM-login flow
@@ -70,7 +70,7 @@ Principal captured by PostLoginCaptureFilter: NULL (BUG REPRODUCED)
 ```
 
 confirming the bug reproduces with just this minimal EAR/WAR and a `basicRegistry`, no LDAP/DB/EJB
-involved, and that the regression window is between 26.0.0.3 and 26.0.0.5.
+involved, and that the regression window is between 26.0.0.4 and 26.0.0.5.
 
 ## Expected vs actual
 
