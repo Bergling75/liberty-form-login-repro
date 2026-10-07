@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example.repro</groupId>
+  <artifactId>liberty-form-login-repro</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <description>
+    Minimal reproducer for an Open Liberty regression (26.0.0.5+): request.getUserPrincipal()
+    returns null when called immediately after filterChain.doFilter() returns inside a Filter
+    mapped to /j_security_check, even though FORM-login authentication just succeeded.
+  </description>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>repro-web</module>
+    <module>repro-ear</module>
+  </modules>
+</project>

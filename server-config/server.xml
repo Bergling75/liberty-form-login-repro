@@ -1,0 +1,37 @@
+<server description="liberty-form-login-repro">
+
+    <!-- Minimal feature set: servlet + jsp + FORM-based appSecurity with a basicRegistry
+         (no LDAP/DB needed to reproduce the bug). -->
+    <featureManager>
+        <feature>servlet-4.0</feature>
+        <feature>jsp-2.3</feature>
+        <feature>appSecurity-2.0</feature>
+    </featureManager>
+
+    <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
+                  httpPort="9081"
+                  httpsPort="9444" />
+
+    <basicRegistry id="basic" realm="reproRealm">
+        <user name="reprouser" password="reprouser" />
+        <group name="reprogroup">
+            <member name="reprouser" />
+        </group>
+    </basicRegistry>
+
+    <authorization-roles id="repro-ear">
+        <security-role name="reprouser">
+            <group name="reprogroup" />
+        </security-role>
+    </authorization-roles>
+
+    <application id="repro-ear" name="repro-ear" location="repro-ear.ear" type="ear">
+        <application-bnd>
+            <security-role name="reprouser">
+                <group name="reprogroup" />
+            </security-role>
+        </application-bnd>
+    </application>
+
+</server>
