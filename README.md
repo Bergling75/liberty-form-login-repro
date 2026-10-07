@@ -76,12 +76,8 @@ involved, and that the regression window is between 26.0.0.3 and 26.0.0.5.
 
 | Liberty version | Value captured by `PostLoginCaptureFilter` |
 |---|---|
-| 26.0.0.3 (confirmed), other containers | `reprouser` |
+| 26.0.0.4 (confirmed), other containers | `reprouser` |
 | 26.0.0.5+ (confirmed) | `NULL (BUG REPRODUCED)` |
-
-Not yet tested directly with this reproducer: 26.0.0.4 (the real application that surfaced this
-bug worked on 26.0.0.4 and broke on 26.0.0.5, suggesting the regression window is narrowly
-26.0.0.4 → 26.0.0.5, but that hasn't been confirmed with this isolated reproducer yet).
 
 ## Why this matters
 
