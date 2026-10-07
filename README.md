@@ -1,7 +1,7 @@
 # liberty-form-login-repro
 
 Minimal reproducer for an Open Liberty regression. Confirmed:
-- **Works correctly on 26.0.0.3** (verified directly with this reproducer).
+- **Works correctly on 26.0.0.4** (verified directly with this reproducer).
 - **Broken on 26.0.0.5+** (verified directly with this reproducer; also originally observed in a
   real application upgrading from 26.0.0.4 to 26.0.0.5).
 
